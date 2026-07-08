@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semester Tracker - Course</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <a href="dashboard.html">&larr; Back to Dashboard</a>
+    <h1 id="course-title">Course Name</h1>
+  </header>
+
+  <main>
+
+    <!-- ===================== -->
+    <!-- ADMIN-ONLY: Add Topic -->
+    <!-- ===================== -->
+    <section id="admin-topic-section" style="display:none;">
+      <h2>Add Topic</h2>
+      <form id="add-topic-form">
+        <input type="text" id="new-topic-name" placeholder="New Topic Name" required>
+        <button type="submit">Add Topic</button>
+      </form>
+    </section>
+
+    <!-- ===================== -->
+    <!-- TOPIC LIST -->
+    <!-- ===================== -->
+    <section id="topics-section">
+      <h2>Topics</h2>
+      <!-- Topic rows will be added here dynamically by course.js -->
+      <!-- Each row will show: topic name, checkbox for completed, Notes button (if completed), Edit/Delete (if admin) -->
+      <div id="topics-list"></div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- NOTES MODAL/SECTION -->
+    <!-- Shown when user clicks "Notes" on a completed topic -->
+    <!-- ===================== -->
+    <section id="notes-section" style="display:none;">
+      <h2 id="notes-topic-title">Notes for: </h2>
+      <textarea id="notes-textarea" placeholder="Write your notes here..."></textarea>
+      <button id="save-notes-btn">Save Notes</button>
+      <button id="close-notes-btn">Close</button>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FIREBASE SDK (Compat version)
+       ===================================================== -->
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+  <!-- Our own JS files -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/course.js"></script> 
+  <script src="js/admin.js"></script> 
+
+</body>
+</html>

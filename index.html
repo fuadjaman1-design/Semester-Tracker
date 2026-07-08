@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semester Tracker - Login</title>
+
+  <!-- We will link our CSS file here in Step 3 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== -->
+  <!-- LOGIN / SIGNUP SECTION -->
+  <!-- ===================== -->
+  <main>
+    <h1>Semester Tracker</h1>
+
+    <!-- Login Form -->
+    <section id="login-section">
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <!-- Signup Form -->
+    <section id="signup-section">
+      <h2>Sign Up</h2>
+      <form id="signup-form">
+        <input type="text" id="signup-name" placeholder="Full Name" required>
+        <input type="email" id="signup-email" placeholder="Email" required>
+        <input type="password" id="signup-password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+    </section>
+
+    <!-- We'll show error/status messages here later -->
+    <p id="auth-message"></p>
+  </main>
+
+  <!-- =====================================================
+       FIREBASE SDK (Compat version - works with plain <script> tags,
+       no build tools or "import" statements needed)
+       ===================================================== -->
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+  <!-- Our own JS files. Order matters: config must load before auth.js uses it -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+
+</body>
+</html>

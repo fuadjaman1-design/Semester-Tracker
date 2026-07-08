@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semester Tracker - Dashboard</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== -->
+  <!-- TOP BAR -->
+  <!-- ===================== -->
+  <header>
+    <h1>Semester Tracker</h1>
+    <p id="welcome-message"></p>
+    <a href="analytics.html">Weekly Analysis</a>
+    <button id="logout-btn">Logout</button>
+  </header>
+
+  <main>
+
+    <!-- ===================== -->
+    <!-- ADMIN-ONLY SECTION -->
+    <!-- Only visible if the logged-in user is an Admin -->
+    <!-- ===================== -->
+    <section id="admin-section" style="display:none;">
+      <h2>Admin Controls</h2>
+
+      <!-- Add new course -->
+      <form id="add-course-form">
+        <input type="text" id="new-course-name" placeholder="New Course Name" required>
+        <button type="submit">Add Course</button>
+      </form>
+
+      <!-- Promote a user to Admin -->
+      <form id="promote-user-form">
+        <input type="email" id="promote-email" placeholder="User Email" required>
+        <button type="submit">Promote to Admin</button>
+      </form>
+    </section>
+
+    <!-- ===================== -->
+    <!-- COURSE LIST -->
+    <!-- ===================== -->
+    <section id="courses-section">
+      <h2>Courses</h2>
+      <!-- Course cards will be added here dynamically by dashboard.js -->
+      <div id="courses-list"></div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FIREBASE SDK (Compat version)
+       ===================================================== -->
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+  <!-- Our own JS files -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+   <script src="js/dashboard.js"></script> 
+  <script src="js/admin.js"></script> 
+
+</body>
+</html>

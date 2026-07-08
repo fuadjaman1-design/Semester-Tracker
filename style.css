@@ -1,0 +1,221 @@
+/* =========================================
+   1. RESET & BASE STYLES
+   These rules remove browser default spacing
+   and set up a consistent base font/look.
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* padding/border no longer add to element width */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   2. HEADER
+   Used on dashboard, course, and analytics pages
+========================================= */
+header {
+  background-color: #ffffff;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+header h1 {
+  font-size: 20px;
+}
+
+/* =========================================
+   3. MAIN CONTENT AREA
+========================================= */
+main {
+  max-width: 800px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+main h1 {
+  font-size: 28px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* =========================================
+   4. SECTIONS (cards)
+   Every <section> gets a simple card look:
+   white background, light border, rounded corners
+========================================= */
+section {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+section h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+/* =========================================
+   5. FORMS
+   Applies to login, signup, add-course,
+   add-topic, promote-user forms, etc.
+========================================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 320px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+  max-width: 100%;
+}
+
+button {
+  padding: 10px 16px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Secondary/neutral buttons (e.g. Logout, Close) */
+#logout-btn,
+#close-notes-btn {
+  background-color: #6b7280;
+}
+
+#logout-btn:hover,
+#close-notes-btn:hover {
+  background-color: #4b5563;
+}
+
+/* =========================================
+   6. COURSE CARDS (on Dashboard)
+========================================= */
+.course-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.course-card .course-info h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.course-card .course-info p {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* =========================================
+   7. TOPIC ROWS (on Course page)
+========================================= */
+.topic-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.topic-row .topic-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topic-row .topic-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* =========================================
+   8. WEEKLY BREAKDOWN (Analytics page)
+========================================= */
+.week-block {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.week-block:last-child {
+  border-bottom: none;
+}
+
+.week-block h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.week-block p {
+  font-size: 14px;
+  color: #374151;
+}
+
+/* =========================================
+   9. GRAPH CANVAS
+========================================= */
+#progress-graph {
+  width: 100%;
+  max-height: 300px;
+}
+
+/* =========================================
+   10. UTILITY
+========================================= */
+#auth-message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #dc2626; /* red for error/status messages */
+  text-align: center;
+}
