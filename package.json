@@ -1,0 +1,20 @@
+{
+  "name": "semester-study-tracker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build && node scripts/prepare-sites-build.mjs",
+    "test:notifications": "node scripts/test-smart-notifications.mjs",
+    "notifications:send": "node scripts/send-smart-notifications.mjs"
+  },
+  "devDependencies": {
+    "@openai/sites-vite-plugin": "^0.2.0",
+    "isomorphic-git": "^1.41.9",
+    "vite": "^8.0.0"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.5.0",
+    "web-push": "^3.6.7"
+  }
+}
+
