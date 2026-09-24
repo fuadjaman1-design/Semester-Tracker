@@ -2,8 +2,10 @@ name: Smart study reminders
 
 on:
   schedule:
-    # 08:17, 14:17 and 20:17 in Bangladesh (UTC+6).
-    - cron: "17 2,8,14 * * *"
+    # 00:00 (midnight) and 12:00 (noon) in Bangladesh (UTC+6).
+    - cron: "0 6,18 * * *"
+    # 20:15 (8:15 PM) in Bangladesh (UTC+6).
+    - cron: "15 14 * * *"
   workflow_dispatch:
 
 permissions:
@@ -28,4 +30,3 @@ jobs:
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
-
